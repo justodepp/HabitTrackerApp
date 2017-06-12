@@ -3,6 +3,7 @@
     <string name="action_dummy_data">Insert Dummy Data</string>
 
     <string name="habit_description">Habit Description</string>
+    <string name="habit_hint_description">Description</string>
     <string name="habit_priority">Habit Priority</string>
     <string name="habit_state">Habit State</string>
     <string name="habit_date">Habit Date</string>

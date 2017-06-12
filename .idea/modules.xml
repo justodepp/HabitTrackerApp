@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HabitTrackerApp.iml" filepath="$PROJECT_DIR$/HabitTrackerApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HabitTrackerApp.iml" filepath="$PROJECT_DIR$/HabitTrackerApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

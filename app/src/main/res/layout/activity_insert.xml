@@ -43,7 +43,7 @@
         <!-- Description field -->
         <EditText
             android:id="@+id/edit_description"
-            android:hint="@string/habit_description"
+            android:hint="@string/habit_hint_description"
             android:textAppearance="?android:textAppearanceMedium"
             android:inputType="text"
             style="@style/CategoryStyle" />
