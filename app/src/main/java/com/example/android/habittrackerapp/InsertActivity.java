@@ -20,8 +20,11 @@ import android.widget.Toast;
 import com.example.android.habittrackerapp.data.HabitDbHelper;
 import com.example.android.habittrackerapp.data.HabitContract.HabitEntry;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import static android.R.attr.id;
 
 public class InsertActivity extends AppCompatActivity {
 
@@ -49,7 +52,7 @@ public class InsertActivity extends AppCompatActivity {
         spinnerState = (Spinner) findViewById(R.id.spinner_state);
 
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat sdf = new SimpleDateFormat().getDateInstance();
         mCurrentDate =  sdf.format(c.getTime());
         Log.d("Edit", mCurrentDate);
         textViewDate.setText(mCurrentDate);
@@ -59,7 +62,7 @@ public class InsertActivity extends AppCompatActivity {
     }
 
     /**
-     * Setup the dropdown spinner that allows the user to select the gender of the pet.
+     * Setup the dropdown spinner that allows the user to select the Priority of the task.
      */
     private void setupSpinnerPriority() {
         // Create adapter for spinner. The list options are from the String array it will use
@@ -93,6 +96,9 @@ public class InsertActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Setup the dropdown spinner that allows the user to select the State of the task.
+     */
     private void setupSpinnerState() {
         // Create adapter for spinner. The list options are from the String array it will use
         // the spinner will use the default layout
@@ -120,7 +126,7 @@ public class InsertActivity extends AppCompatActivity {
             // Because AdapterView is an abstract class, onNothingSelected must be defined
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                mState = HabitEntry.STATE_TASK_DONE; // Low
+                mState = HabitEntry.STATE_TASK_UNDONE; // undone
             }
         });
     }
@@ -134,8 +140,8 @@ public class InsertActivity extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put(HabitEntry.COLUMN_DATE_TASK, mCurrentDate);
         values.put(HabitEntry.COLUMN_TASK_DESCRIPTION, descriptionString);
-        values.put(HabitEntry.COLUMN_PRIORITY_TASK, HabitEntry.PRIORITY_LOW);
-        values.put(HabitEntry.COLUMN_STATE_TASK, HabitEntry.STATE_TASK_UNDONE);
+        values.put(HabitEntry.COLUMN_PRIORITY_TASK, mPriority);
+        values.put(HabitEntry.COLUMN_STATE_TASK, mState);
 
         // Insert a new row for pet in the database, returning the ID of that new row.
         long newRowId = db.insert(HabitEntry.TABLE_NAME, null, values);
@@ -143,10 +149,10 @@ public class InsertActivity extends AppCompatActivity {
         // Show a toast message depending on whether or not the insertion was successful
         if (newRowId == -1) {
             // If the row ID is -1, then there was an error with insertion.
-            Toast.makeText(this, "Error with saving pet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error with saving habit task", Toast.LENGTH_SHORT).show();
         } else {
             // Otherwise, the insertion was successful and we can display a toast with the row ID.
-            Toast.makeText(this, "Pet saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Habit task saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -160,24 +166,16 @@ public class InsertActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // User clicked on a menu option in the app bar overflow menu
-        switch (item.getItemId()) {
-            // Respond to a click on the "Save" menu option
-            case R.id.habit_save:
-                // Save pet to database
-                insertHabit();
-                // Exit activity
-                finish();
-                return true;
-            // Respond to a click on the "Delete" menu option
-            case R.id.habit_delete:
-                // Do nothing for now
-                return true;
-            // Respond to a click on the "Up" arrow button in the app bar
-            case android.R.id.home:
-                // Navigate back to parent activity (CatalogActivity)
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.habit_save) {
+            // Save pet to database
+            insertHabit();
+            Toast.makeText(this,"Data added", Toast.LENGTH_SHORT).show();
+            // Exit activity
+            finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

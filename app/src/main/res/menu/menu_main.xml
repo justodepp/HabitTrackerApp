@@ -7,4 +7,9 @@
         android:orderInCategory="100"
         android:title="@string/action_dummy_data"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/habit_delete"
+        android:title="@string/habit_delete"
+        app:showAsAction="never" />
 </menu>

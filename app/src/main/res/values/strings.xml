@@ -16,5 +16,5 @@
     <string name="habit_state_undone">UNDONE</string>
 
     <string name="habit_save">Save</string>
-    <string name="habit_delete">Delete</string>
+    <string name="habit_delete">Delete All Data</string>
 </resources>

@@ -9,9 +9,4 @@
         android:title="@string/habit_save"
         android:icon="@android:drawable/ic_menu_save"
         app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/habit_delete"
-        android:title="@string/habit_delete"
-        app:showAsAction="never" />
 </menu>

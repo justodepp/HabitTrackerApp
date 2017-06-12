@@ -24,6 +24,7 @@
         <TextView
             android:id="@+id/text_view_date"
             android:hint="@string/habit_hint_date"
+            android:textColor="@android:color/black"
             android:textAppearance="?android:textAppearanceMedium"
             style="@style/CategoryStyle" />
 
@@ -46,6 +47,7 @@
             android:hint="@string/habit_hint_description"
             android:textAppearance="?android:textAppearanceMedium"
             android:inputType="text"
+            android:textColor="@android:color/black"
             style="@style/CategoryStyle" />
     </LinearLayout>
 
