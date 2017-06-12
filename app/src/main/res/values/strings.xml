@@ -1,4 +1,19 @@
 <resources>
-    <string name="app_name">HabitTrackerApp</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">Habit Tracker</string>
+    <string name="action_dummy_data">Insert Dummy Data</string>
+
+    <string name="habit_description">Habit Description</string>
+    <string name="habit_priority">Habit Priority</string>
+    <string name="habit_state">Habit State</string>
+    <string name="habit_date">Habit Date</string>
+    <string name="habit_hint_date">0000-00-00</string>
+
+    <string name="habit_priority_low">LOW</string>
+    <string name="habit_priority_high">HIGH</string>
+
+    <string name="habit_state_done">DONE</string>
+    <string name="habit_state_undone">UNDONE</string>
+
+    <string name="habit_save">Save</string>
+    <string name="habit_delete">Delete</string>
 </resources>
