@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.NavUtils;
@@ -18,8 +17,6 @@ import android.widget.Toast;
 
 import com.example.android.habittrackerapp.data.HabitDbHelper;
 import com.example.android.habittrackerapp.data.HabitContract.HabitEntry;
-
-import static android.os.Build.VERSION_CODES.M;
 
 public class MainActivity extends AppCompatActivity {
 
